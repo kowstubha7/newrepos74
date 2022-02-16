@@ -26,7 +26,19 @@ view: users {
     sql: CONCAT(${first_name},' ',${last_name} ;;
 
   }
-
+  dimension: age_tier {
+    type: tier
+    tiers:[10,20,30,40,50,60,70,80,90,100]
+  sql: $age ;;
+  }
+  dimension: len_of_name {
+    type: number
+    sql: LENGTH(${full_name} ;;
+  }
+measure: avg_age {
+  type: average_distinct
+  sql_distinct_key: ${age} ;;
+}
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
