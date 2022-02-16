@@ -29,8 +29,8 @@ view: users {
   }
 
 measure: avg_age {
-  type: average_distinct
-  sql_distinct_key: ${age} ;;
+  type: average
+  sql: ${age} ;;
 }
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
