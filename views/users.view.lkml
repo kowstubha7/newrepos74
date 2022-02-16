@@ -110,7 +110,7 @@ measure: avg_age {
   }
   dimension: full_name {
     type: string
-    sql: CONCAT(${first_name},' ',${last_name} ;;
+    sql: CONCAT(CONCAT(${first_name},' '),${last_name});;
   }
   dimension: len_name {
     type: number
