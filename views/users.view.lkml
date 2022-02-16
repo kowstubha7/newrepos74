@@ -21,6 +21,11 @@ view: users {
     type: number
     sql: ${TABLE}.age ;;
   }
+  dimension: full_name {
+    type: string
+    sql: CONCAT(${first_name},' ',${last_name} ;;
+
+  }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
