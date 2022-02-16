@@ -21,20 +21,13 @@ view: users {
     type: number
     sql: ${TABLE}.age ;;
   }
-  dimension: full_name {
-    type: string
-    sql: CONCAT(${first_name},' ',${last_name} );;
 
-  }
   dimension: age_tier {
     type: tier
     tiers:[10,20,30,40,50,60,70,80,90,100]
   sql: $age ;;
   }
-  dimension: len_of_name {
-    type: number
-    sql: LENGTH(${full_name}) ;;
-  }
+
 measure: avg_age {
   type: average_distinct
   sql_distinct_key: ${age} ;;
@@ -114,6 +107,14 @@ measure: avg_age {
   dimension: zip {
     type: zipcode
     sql: ${TABLE}.zip ;;
+  }
+  dimension: full_name {
+    type: string
+    sql: CONCAT(${first_name},' ',${last_name} ;;
+  }
+  dimension: len_name {
+    type: number
+    sql: LENGTH(${full_name}) ;;
   }
 
   measure: count {
