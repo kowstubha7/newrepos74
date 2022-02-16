@@ -23,7 +23,7 @@ view: users {
   }
   dimension: full_name {
     type: string
-    sql: CONCAT(${first_name},' ',${last_name} ;;
+    sql: CONCAT(${first_name},' ',${last_name} );;
 
   }
   dimension: age_tier {
@@ -33,7 +33,7 @@ view: users {
   }
   dimension: len_of_name {
     type: number
-    sql: LENGTH(${full_name} ;;
+    sql: LENGTH(${full_name}) ;;
   }
 measure: avg_age {
   type: average_distinct
